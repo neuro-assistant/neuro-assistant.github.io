@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Neuro Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+    <!-- This meta tag is promotional. See: https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html -->
+    <meta name="apple-itunes-app" content="app-id=1281702932">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <noscript>Please enable javascript in your browser in order to view this site.</noscript>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <style>
+        @media all and (min-width: 960px) {
+            body {
+                font-size: 18px;
+            }
+        }
+
+        @media all and (max-width: 959px) and (min-width: 600px) {
+            body {
+                font-size: 16px;
+            }
+        }
+
+        @media all and (max-width: 599px) and (min-width: 320px) {
+            body {
+                font-size: 14px;
+            }
+
+            h1#app-big-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        .nmcolor1 {
+            color: #349643;
+        }
+
+        .nmcolor2 {
+            color: darkorange
+        }
+
+        .nmcolor3 {
+            color: #666666;
+        }
+
+        .nmcolor4 {
+            color: lightseagreen;
+        }
+
+        .margin-round {
+            box-shadow: 10px 10px 10px -10px #777777;
+            border: 1px solid #dddddd;
+            border-radius: 20px;
+            padding: 1em;
+        }
+
+        #message.dirty:invalid, #email.dirty:invalid {
+            border: 1px solid red;
+        }
+
+        #discover .row {
+            margin-top: 2em;
+        }
+
+        .mt2 {
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#home"><img src="img/neuroassistant.svg" width="30" height="30" alt=""></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-target="#home" id="homeLink">Home <span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-target="#discover" id="discoverLink">Discover</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-target="#news" id="newsLink">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-target="#about" id="aboutLink">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-target="#disclaimer" id="disclaimerLink">Disclaimer</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div id="home">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 id="app-big-title" class="display-3">Neuro Assistant</h1>
+            <p>A collection of tools for healthcare professionals working with neurological and neurosurgical
+                patients.</p>
+            <p>Created by clinicians for clinicians.</p>
+            <p><a class="btn btn-outline-success btn-lg" href="#discover" role="button" id="learnMore">Learn more »</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <h2 class="nmcolor1">Comprehensive</h2>
+                <ul>
+                    <li>
+                        A collection of calculators, grading systems and scales commonly
+                        used in neurological and neurosurgical clinical practice.
+                    </li>
+                    <li>
+                        Localization aids for vascular lesions, cranial and peripheral nerves, including visual
+                        guides and textual reference.
+                    </li>
+                    <li>
+                        Selected short clinical and drug references with the most essential and clinically relevant
+                        information in various aspects of practice.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-4">
+                <h2 class="nmcolor1">Usable</h2>
+                <p>
+                    The content is relevant and discoverable and the user interface intuitive and fast.
+                    All content is searchable by tags or full-text queries within the app or from the mobile
+                    device's search function.
+                </p>
+            </div>
+            <div class="col-xl-4">
+                <h2 class="nmcolor1">Up-to-date</h2>
+                <p>
+                    All information is provided after review of the most prominent and up-to-date literature.
+                    Links to any original articles or other relevant resources are provided in all content and tools.
+                </p>
+            </div>
+        </div>
+    </div>
+</div> <!-- home -->
+
+<div id="discover" style="margin-top: 4em;">
+    <div class="container" style="margin-bottom: 2em;">
+        <div class="row">
+            <div class="col-xl mx-auto">
+                <h3 class="text-center nmcolor1">Calculators</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl">
+                <h4 class="nmcolor2">Vascular disorders</h4>
+                <ul>
+                    <li>ABCD² stroke risk after a TIA</li>
+                    <li>ABCD³-I stroke risk after a TIA</li>
+                    <li>ABC/2 ICH blood volume calculator</li>
+                    <li>ASCOD Stroke phenotypic classification</li>
+                    <li>ASPECTS Alberta Stroke Program Early CT Score</li>
+                    <li>pc-ASPECTS Posterior circulation ASPECTS score</li>
+                    <li>ATRIA Bleeding risk in patients on anticoagulation</li>
+                    <li>Barrow classification system for carotid-cavernous fistulas</li>
+                    <li>Borden classification system for dural arteriovenous fistulas</li>
+                    <li>Boston criteria for cerebral amyloid angiopathy</li>
+                    <li>Brugada criteria for ventricular tachycardia</li>
+                    <li>CHADS₂ Stroke risk in patients with atrial fibrillation</li>
+                    <li>CHA₂DS₂-VASc Stroke risk in patients with atrial fibrillation</li>
+                    <li>Cognard classification system for dural arterio-venous fistulas</li>
+                    <li>DRAGON 3-month outcome in ischemic stroke after tPA treatment</li>
+                    <li>Eligibility for tPA - Exclusion criteria for tPA treatment in acute stroke</li>
+                    <li>Framingham CVD 10-year risk for developing cardiovascular disease</li>
+                    <li>Fisher Scale - Grading and vasospasm risk calculation in SAH</li>
+                    <li>Modified Fisher Scale for SAH</li>
+                    <li>FUNC Score - Likelihood of independence after ICH</li>
+                    <li>GRASPS Risk of post-tPA hemorrhage</li>
+                    <li>GWTG Score In-hospital all-cause heart failure mortality</li>
+                    <li>HAS-BLED Score - Bleeding risk in patients on anticoagulation</li>
+                    <li>HAT Score - Risk of post-tPA hemorrhage</li>
+                    <li>HEMORR₂HAGES Score - Risk of major bleeding</li>
+                    <li>Hunt &amp; Hess Classification and outcome in SAH</li>
+                    <li>ICH Score - Mortality after ICH</li>
+                    <li>mCT score - Evaluation of collateral circullation and vascular filling in acute stroke</li>
+                    <li>NIH Stroke Scale</li>
+                    <li>Ogilvy and Carter Grading - Outcome in aneurysmal SAH</li>
+                    <li>PHASES Score - Aneurysm rupture risk</li>
+                    <li>RACE - Rapid Arterial oCclusion Evaluation Scale for Stroke</li>
+                    <li>RoPE Score - Risk of Paradoxical Embolism Score</li>
+                    <li>Spetzler-Martin Grading for arterio-venous malformations</li>
+                    <li>SAMe-TT₂R₂ Score - Quality of VKA therapy</li>
+                    <li>UIATS Score - Management of unruptured intracranial aneurysms</li>
+                    <li>WFNS Scale - Outcome in SAH</li>
+                </ul>
+            </div>
+
+            <div class="col-xl">
+                <h4 class="nmcolor2">Neurodegenerative disorders</h4>
+                <ul>
+                    <li>Fazekas scale for white matter lesions</li>
+                    <li>GCA - Global Cortical Atrophy scale</li>
+                    <li>MTA - Medial Temporal Atrophy scale</li>
+                </ul>
+            </div>
+
+            <div class="col-xl">
+                <h4 class="nmcolor2">Neurointensive Care</h4>
+                <ul>
+                    <li>AAN Brain Death Criteria</li>
+                    <li>FOUR Score - Full Outline of UnResponsiveness Score for coma</li>
+                    <li>GCS - Glasgow Coma Scale</li>
+                    <li>Pediatric GCS</li>
+                    <li>Ramsay Sedation Scale</li>
+                    <li>Richmond Agitation-Sedation Scale</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl">
+                <h4 class="nmcolor2">Neuroinflammatory disorders</h4>
+                <ul>
+                    <li>McDonald Criteria - The 2017 Revised McDonald Criteria for MS</li>
+                    <li>Risk for PML in Natalizumab treated patients</li>
+                </ul>
+            </div>
+
+            <div class="col-xl">
+                <h4 class="nmcolor2">Disability scales</h4>
+                <ul>
+                    <li>EDSS - Expanded Disability Status Scale</li>
+                    <li>Glasgow Outcome Scale for disability after cerebral injury</li>
+                    <li>Modified Ashworth Scale for spasticity</li>
+                    <li>Modified Rankin Scale for disability</li>
+                    <li>Oxford handicap scale</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl">
+                <h4 class="nmcolor2">Movement disorders</h4>
+                <ul>
+                    <li>UPDRS - Unified Parkinson's Disease Rating Scale (not MDS-UPDRS)</li>
+                    <li>L-Dopa Equivalent Dose Calculator</li>
+                </ul>
+            </div>
+
+            <div class="col-xl">
+                <h4 class="nmcolor2">Neuromuscular disorders</h4>
+                <ul>
+                    <li>ALSFRS-R - Amyotrophic Lateral Sclerosis Functional Rating Scale Revised</li>
+                    <li>EGRIS - Erasmus GBS Respiratory Insufficiency Score</li>
+                    <li>El Escorial Criteria - Diagnostic criteria for ALS</li>
+                    <li>House-Brackmann Grading system for facial nerve palsy</li>
+                    <li>Sunnybrook Facial Grading System</li>
+                    <li>mEGOS - Modified Erasmus GBS Outcome Score</li>
+                    <li>Quantitative Myasthenia Gravis (QMG) test</li>
+                    <li>Revised Airlie House criteria for ALS</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl">
+                <h4 class="nmcolor2">Pharmacology related</h4>
+                <ul>
+                    <li>Anticoagulant Switcher - Recommendations when switching between anticoagulants</li>
+                    <li>Drug Interactions Finder - Find interactions of single or multiple drugs</li>
+                </ul>
+            </div>
+
+            <div class="col-xl">
+                <h4 class="nmcolor2">Various</h4>
+                <ul>
+                    <li>MDRD GFR - eGFR calculator using the MDRD formula</li>
+                    <li>Body mass index calculator</li>
+                    <li>Body surface area calculator</li>
+                    <li>Syncope score - help in differential diagnosis of syncope vs epileptic seizure</li>
+                    <li>TLICS score for thoracolumbar spine injuries</li>
+                    <li>IMPACT TBI score</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-10 mx-auto">
+                <hr/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl mx-auto">
+                <h3 class="text-center nmcolor1">Neuropharmacology summaries</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl mx-auto">
+                <p>
+                    Comprehensive summaries including pharmacokinetics, metabolism, drug interactions, dosing
+                    suggestions and
+                    dose adjustment in patients with impaired renal or hepatic function.
+                </p>
+                <ul>
+                    <li>Antithrombotics including all newer anticoagulant and antiplatelet drugs.</li>
+                    <li>Antiepileptics including all newer antiepileptic drugs.</li>
+                    <li>Antiparkinsonian drugs.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-10 mx-auto">
+                <hr/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl mx-auto">
+                <h3 class="text-center nmcolor1">Clinical summaries and quick-refs</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl mx-auto">
+                <ul>
+                    <li>Current evidence-based recommended treatment algorithm for convulsive status epilepticus.</li>
+                    <li>Comprehensive coverage of stroke syndromes per artery</li>
+                    <li>Ischemic stroke</li>
+                    <li>Nontraumatic ICH</li>
+                    <li>Epidural hematoma</li>
+                    <li>Acute subdural hematoma</li>
+                    <li>Subarachnoid hemorrhage</li>
+                    <li>Movement disorder emergencies</li>
+                    <li>Neuromuscular emergencies</li>
+                    <li>Coma</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-10 mx-auto">
+                <hr/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl mx-auto">
+                <h3 class="text-center nmcolor1">Neuroanatomy and localization aids</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl mx-auto">
+                <ul>
+                    <li>Dermatome maps</li>
+                    <li>Full reference of peripheral nerves, searchable by root, innervated muscle or sensory area.</li>
+                    <li>Cranial nerve reference.</li>
+                    <li>Arterial perfusion maps of the brain.</li>
+                    <li>Arterial anatomy of the brain.</li>
+                    <li>More coming soon!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- NEWS -->
+
+
+<div id="news" style="margin-top:4em;">
+    <div class="container">
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4"><small>2018-09-10</small>&nbsp Version 1.6.5 </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added pc-ASPECTS score for posterior circulation stroke</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added mCT score for evaluating collateral circulation and vascular filling in acute stroke.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4"><small>2018-09-06</small>&nbsp Version 1.6.4 </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added TLICS score for thoracolumbar spine injury</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Updated McDonald criteria for MS according to their 2017 revision.</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added IMPACT TBI score calculator.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.6.2</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added Boston criteria for cerebral amyloid angiopathy</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added Sunnybrook Facial Grading System</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.6.1</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added Neurodegenerative section in calculators</h4>
+                        <ul>
+                            <li>Fazekas scale for white matter lesions</li>
+                            <li>Global Cortical Atrophy score</li>
+                            <li>Medial Temporal Atrophy score</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added Brugada criteria for VT in Vascular section</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.5.0</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Added "Syncope vs Seizure score" in calculators</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Additions in Emergencies module</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Multiple small user interface improvements</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.4.9</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Updated for iOS 11.3</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.4.8</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">New tools added in Calculators module</h4>
+                        <ul>
+                            <li>EGRIS - Erasmus GBS Respiratory Insufficiency Score</li>
+                            <li>RACE - Rapid Arterial oCclusion Evaluation Scale for Stroke</li>
+                            <li>RoPE - Risk of Paradoxical Embolism Score</li>
+                            <li>SAMe-TT₂R₂ - Quality of VKA therapy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.4.6</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">New in Emergencies module</h4>
+                        <h5>Neuromuscular emergencies section</h5>
+                        <ul>
+                            <li>Respiratory management in NMD patients</li>
+                            <li>Drug considerations in NMD patients</li>
+                            <li>Guillain-Barré syndrome</li>
+                            <li>Acute Porphyria</li>
+                            <li>Myasthenic crisis</li>
+                            <li>Botulism</li>
+                        </ul>
+
+                        <h4 class="nmcolor3">New in Calculators module</h4>
+                        <ul>
+                            <li>The Quantitative Myasthenia Gravis (QMG) Test</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.4.5</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Movement disorders emergencies</h4>
+                        <ul>
+                            <li>Neuroleptic malignant syndrome</li>
+                            <li>Serotonin syndrome</li>
+                            <li>Malignant catatonia</li>
+                            <li>Dystonic storm</li>
+                            <li>Oculogyric crisis</li>
+                            <li>Malignant Tourette syndrome</li>
+                            <li>Psychosis in Parkinson's disease</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.4.3</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">New content in Emergencies module</h4>
+                        <ul>
+                            <li>Epidural hematoma</li>
+                            <li>Acute subdural hematoma</li>
+                            <li>Subarachnoid hemorrhage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.4.2</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">New content in Emergencies module</h4>
+                        <ul>
+                            <li>Nontraumatic parenchymal hemorrhage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.4.1</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">New content in Emergencies module</h4>
+                        <ul>
+                            <li>Ischemic stroke</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.4</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">New content in Vascular territories module</h4>
+                        <ul>
+                            <li>Brain venous anatomy reference</li>
+                            <li>Review of cerebral venous thrombosis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Improved startup time</h4>
+                        <p>Indexing content happens at first startup after install or update. Subsequent startups are
+                            almost instantaneous.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-round mt2">
+            <div class="col-xl">
+                <div class="row">
+                    <div class="col-xl">
+                        <h3 class="nmcolor4">Version 1.3</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">New content in Vascular territories module</h4>
+                        <ul>
+                            <li>Brain arterial and venous anatomy reference</li>
+                            <li>Review of stroke syndromes organized per-vessel</li>
+                            <li>Review of venous sinus thrombosis syndromes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Search function improvements</h4>
+                        <p>Search result views are automatically scrolled to the portion matching the given search
+                            term and the relevant text is highlighted.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl mt2">
+                        <h4 class="nmcolor3">Upcoming changes</h4>
+                        <p>
+                            New <span class="nmcolor4">Emergencies</span> module currently contains a single
+                            section on status epilepticus. We will be adding sections incrementally as soon as they
+                            are complete.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about" style="margin-top: 4em;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 mx-auto">
+                <h3 class="nmcolor1">About us</h3>
+                <p>
+                    Our aim at Neuraxis is to provide valuable and affordable tools for experts working with
+                    neurological and neurosurgical patients.
+                </p>
+
+                <br/>
+
+                <h3 class="nmcolor1">Consider leaving a review</h3>
+                <p>
+                    If you like our apps please consider leaving a review. Good reviews make an app more
+                    discoverable in the AppStore. Having more people using the app means having less bugs, more
+                    features and thus better value for your money.
+                </p>
+                <p>
+                    If you are unsatisfied with an app, please consider letting us know why before leaving a bad
+                    review. If you have found a bug, an omission or other undesirable behavior, your feedback will
+                    help us correct it and improve your experience.
+                </p>
+
+                <br/>
+
+                <h3 class="nmcolor1">We would like to hear from you</h3>
+                <p>
+                    If you need a tool that we are missing or have other suggestions or feedback, send us an email at
+                    <b>neuromancerapp</b>[at]<b>gmail.com</b>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="disclaimer" style="margin-top: 4em;">
+    <div class="container" style="font-size:80%">
+        <div class="row">
+            <div class="col-xl-8 mx-auto">
+                <h3 class="nmcolor1">Disclaimer</h3>
+                <br/>
+                <h4>A. Terms of Use Agreement</h4>
+                <p>By accessing this website and reading its content or using the Neuraxis AB mobile
+                    applications, you acknowledge and agree that you have read, understood and accepted these terms
+                    and conditions, that the provisions, disclosures and disclaimers set forth herein are fair and
+                    reasonable and that your agreement to follow and be bound by these therms and conditions is
+                    voluntary and is not the result of fraud, duress or undue influence exercised upon you by any
+                    person or entity.</p>
+
+                <h5>1. No advice</h5>
+                <p>The information provided by Neuraxis AB is not medical advice and should not be regarded as an
+                    alternative to medical advice, diagnosis or treatment from a professional healthcare provider.</p>
+
+                <h5>2. No warranties</h5>
+                <p>The information made available in this website or the mobile applications is provided "as is"
+                    and "as available" without warranties of any kind, either express or implied. Under no
+                    circumstances, as a result of your use of the website or mobile applications, will Neuraxis AB
+                    be liable to you or to any other person for any direct, indirect, incidental, consequential,
+                    special, exemplary or other damages under any legal theory, including, without limitation, tort,
+                    contract, strict liability or otherwise, even if advised of the possibility of such damages.</p>
+
+                <h5>3. Legal disclaimer</h5>
+                <p>This website or provided mobile applications should not be used in any legal capacity whatsoever,
+                    including but not limited to establishing "standard of care" in a legal sense or as a basis for
+                    expert witness testimony. No guarantee is given regarding the accuracy of any statements or
+                    opinions expressed on the website and mobile applications.</p>
+
+                <h5>4. Indemnification</h5>
+                <p>You agree to defend, indemnify and hold Neuraxis AB harmless from and against any and all claims,
+                    damages, costs including attorneys' fees, arising from or related to your use of the website or
+                    its mobile applications.</p>
+
+                <h4>B. Copyright</h4>
+                <h5>1. Ownership of copyright</h5>
+                <p>Neuraxis AB owns the copyright to this website and its material. Neuraxis AB owns the copyright
+                    to its mobile applications and their material.</p>
+
+                <h5>2. Copyright license</h5>
+                <p>Neuraxis AB grants you license to access, print or store the information provided in this website
+                    or mobile applications for non-commercial purposes and provided that the following clause on
+                    reverse engineering (see paragraph 3) is upheld. No other permissions or rights to Neuraxis AB
+                    owned material are granted. All other rights are reserved.</p>
+
+                <h5>3. Reverse engineering</h5>
+                <p>Licensee will not reverse engineer, decompile, disassemble or otherwise attempt to derive the
+                    source code, content of bundled databases, techniques, processes, algorithms, know-how or other
+                    information from Neuraxis AB website or mobile applications (collectively, "Reverse Engineering")
+                    or permit or induce the foregoing. If directly applicable law prohibits enforcement of the
+                    foregoing, Licensee may engage in Reverse Engineering solely for purposes of obtaining such
+                    information as is necessary to achieve interoperability of independently created software with
+                    the Neuraxis AB Technology, or as otherwise and to the limited extent permitted by
+                    directly applicable law, only if: (a) Reverse Engineering is strictly necessary to obtain
+                    such information, and (b) Licensee has first requested such information from Neuraxis AB and
+                    Neuraxis AB failed to make such information available (for a fee or otherwise) under reasonable
+                    terms and conditions. Any information supplied to or obtained by Licensee under this section
+                    is confidential information of Neuraxis AB, may only be used by Licensee and will not be
+                    disclosed to any third party or used to create any software which is substantially similar to
+                    the expression of the Neuraxis AB Technology.</p>
+
+                <h4>C. Privacy Policy</h4>
+                <p>
+                    In its current form, this website does not collect any kind of user data nor uses any method of
+                    user session tracking. This policy may change in the future. Any changes to this policy will be
+                    clearly
+                    stated in this Privacy Policy section.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" id="downloadButtons" style="margin-top: 5em;">
+        <div class="col">
+            <!-- Create this link with Apple's Link Maker: https://linkmaker.itunes.apple.com -->
+            <a class="float-right" href="https://itunes.apple.com/us/app/neuromancer/id1281702932?mt=8"
+               style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:160px;height:50px;background-size:contain;"></a>
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>
+            <small>© Neuraxis AB 2018</small>
+        </p>
+    </footer>
+</div>
+
+<script>
+    "use strict";
+
+$(document).ready(function() {
+    $(".nav-item a").on("click", navClick);
+    $("a.navbar-brand").on("click", function(e) {
+        e.preventDefault();
+        $("a#homeLink").trigger("click");
+    });
+    $("a#learnMore").on("click", function(e) {
+        e.preventDefault();
+        $("a#discoverLink").trigger("click");
+    });
+
+    $("form#messageForm").on("submit", messageFormSubmit);
+
+    $("button#clearMessageFormButton").on("click", function() {
+        if (confirm("Are you sure you want to clear the form?")) {
+            clearForm();
+        }
+    });
+
+    function navClick(ev) {
+        ev.preventDefault();
+        var target = $(this).attr("data-target");
+
+        $(".nav-item.active").removeClass("active");
+        $(this).parent().addClass("active");
+
+        show(target);
+    }
+
+    function show(target) {
+        var targets = ["#home", "#discover", "#news", "#about", "#disclaimer"];
+        targets.forEach(function(i) { $(i).hide() });
+        $(target).fadeIn(200);
+    }
+
+    function validateForm() {
+        var emailRe = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        var email = $("#email").val();
+        var message = $("#message").val();
+        message = message && message.trim();
+        var isValid = true;
+
+        if (email && !emailRe.test(email)) {
+            $("#emailValidation").text("Invalid email address.");
+            isValid = false;
+        }
+
+        if (!message || message.length <= 20) {
+            $("#messageValidation").text("Your message is too short.");
+            isValid = false;
+        }
+
+        return isValid
+    }
+
+    function messageFormSubmit(e) {
+        e.preventDefault();
+
+        $("#submitErrorAlert").hide();
+        $("#submitSuccessAlert").hide();
+        $("#email").addClass("dirty");
+        $("#message").addClass("dirty");
+        $("#emailValidation").text("");
+        $("#messageValidation").text("");
+
+        if (!validateForm()) {
+            return false;
+        }
+
+        $.post("/api/message", $("form#messageForm").serialize(), "json")
+            .done(function(response) {
+                if (!response.ok) {
+                    uhOh(response.reason);
+                } else {
+                    thankYouForYourFeedback();
+                }
+            })
+            .fail(function(err) {
+                console.log(err);
+                alert("Unexpected error: " + err.statusText + " (" + err.status + ")");
+            })
+
+    }
+
+    function enableSubmit() {
+        $("#messageFormSubmitButton").prop("disabled", false);
+    }
+
+    // Expose it so that reCAPTCHA library can call it
+    window.enableSubmit = enableSubmit;
+
+    function clearForm() {
+        $("#email").val("");
+        $("#message").val("");
+        $("#email").removeClass("dirty");
+        $("#message").removeClass("dirty");
+    }
+
+    function uhOh(reason) {
+        $("#submitErrorAlert").text(reason);
+        $("#submitErrorAlert").show();
+    }
+
+    function thankYouForYourFeedback() {
+        $("#submitSuccessAlert").text("Thank your for your feedback!");
+        $("#submitSuccessAlert").show();
+        clearForm();
+        setTimeout(function() {
+            $("#submitSuccessAlert").fadeOut(1000);
+        }, 5000);
+    }
+
+    $("#submitErrorAlert").hide();
+    $("#submitSuccessAlert").hide();
+    $("#discover").hide();
+    $("#news").hide();
+    $("#about").hide();
+    $("#disclaimer").hide();
+    $("#home").show();
+});
+</script>
+</body>
+</html>
