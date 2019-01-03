@@ -976,6 +976,8 @@
     "use strict";
 
 $(document).ready(function() {
+    var targets = ["#home", "#discover", "#news", "#about", "#contact", "#disclaimer"];
+
     $(".nav-item a").on("click", navClick);
     $("a.navbar-brand").on("click", function(e) {
         e.preventDefault();
@@ -1005,7 +1007,6 @@ $(document).ready(function() {
     }
 
     function show(target) {
-        var targets = ["#home", "#discover", "#news", "#about", "#contact", "#disclaimer"];
         targets.forEach(function(i) { $(i).hide() });
         $(target).fadeIn(200);
     }
